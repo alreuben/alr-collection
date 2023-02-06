@@ -2,7 +2,7 @@
 require_once 'functions.php';
 
 $db = createDbConnection();
-$stmt = retrieveGamesDb();
+$stmt = retrieveGamesDb($db);
 
 
 echo '<pre>';
