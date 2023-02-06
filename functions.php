@@ -5,7 +5,6 @@ function createDbConnection(): PDO
     $db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     return $db;
 }
-
 function retrieveGamesDb(PDO $db): array
 {
     $stmt = $db->prepare("SELECT `name`, `year`, `developers`, `imdb_rating`, `image_url` FROM `games`");
