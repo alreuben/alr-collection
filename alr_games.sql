@@ -6,8 +6,8 @@
 # https://github.com/sequelpro/sequelpro
 #
 # Host: 127.0.0.1 (MySQL 5.7.41)
-# Database: alr-games
-# Generation Time: 2023-02-06 12:05:06 +0000
+# Database: alr_games
+# Generation Time: 2023-02-06 13:37:38 +0000
 # ************************************************************
 
 
@@ -30,7 +30,7 @@ CREATE TABLE `games` (
   `name` varchar(255) NOT NULL DEFAULT '',
   `year` year(4) NOT NULL,
   `developers` varchar(255) NOT NULL DEFAULT '',
-  `imdb rating` float unsigned NOT NULL,
+  `imdb_rating` float unsigned NOT NULL,
   `image` varchar(600) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -38,12 +38,13 @@ CREATE TABLE `games` (
 LOCK TABLES `games` WRITE;
 /*!40000 ALTER TABLE `games` DISABLE KEYS */;
 
-INSERT INTO `games` (`id`, `name`, `year`, `developers`, `imdb rating`, `image`)
+INSERT INTO `games` (`id`, `name`, `year`, `developers`, `imdb_rating`, `image`)
 VALUES
 	(1,'The Elder Scrolls V: Skyrim','2011','Bethesda Game Studios',9.4,'https://upload.wikimedia.org/wikipedia/en/thumb/1/15/The_Elder_Scrolls_V_Skyrim_cover.png/220px-The_Elder_Scrolls_V_Skyrim_cover.png'),
 	(2,'Elden Ring','2022','FromSoftware',9.4,'https://upload.wikimedia.org/wikipedia/en/thumb/b/b9/Elden_Ring_Box_art.jpg/220px-Elden_Ring_Box_art.jpg'),
 	(3,'Final Fantasy VII Remake','2020','Square Enix',9,'https://upload.wikimedia.org/wikipedia/en/thumb/c/ce/FFVIIRemake.png/220px-FFVIIRemake.png'),
-	(4,'The Legend of Zelda: Ocarina of Time','1998','Nintendo',9.6,'https://upload.wikimedia.org/wikipedia/en/thumb/5/57/The_Legend_of_Zelda_Ocarina_of_Time.jpg/220px-The_Legend_of_Zelda_Ocarina_of_Time.jpg');
+	(4,'The Legend of Zelda: Ocarina of Time','1998','Nintendo',9.6,'https://upload.wikimedia.org/wikipedia/en/thumb/5/57/The_Legend_of_Zelda_Ocarina_of_Time.jpg/220px-The_Legend_of_Zelda_Ocarina_of_Time.jpg'),
+	(5,'Stardew Valley','2016','ConcernedApe',8.5,'https://upload.wikimedia.org/wikipedia/en/thumb/f/fd/Logo_of_Stardew_Valley.png/220px-Logo_of_Stardew_Valley.png');
 
 /*!40000 ALTER TABLE `games` ENABLE KEYS */;
 UNLOCK TABLES;
