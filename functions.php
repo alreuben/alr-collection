@@ -18,7 +18,7 @@ function createDbConnection(): PDO
  */
 function retrieveGamesDb(PDO $db): array
 {
-    $stmt = $db->prepare("SELECT `name`, `year`, `developers`, `imdb_rating`, `image_url` FROM `games`");
+    $stmt = $db->prepare('SELECT `name`, `year`, `developers`, `imdb_rating`, `image_url` FROM `games`');
     $stmt->execute();
     return $stmt->fetchAll();
 }

@@ -1,0 +1,24 @@
+* {
+    box-sizing: border-box;
+    background-color: #161C22;
+    font-family: "Rubik", sans-serif;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10%;
+    /*position: fixed;*/
+}
+
+a {
+    color: #d2dae2;
+    text-decoration: none;
+}
+
+header {
+    background-image: url("images/header.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
