@@ -45,6 +45,7 @@ header {
     overflow: hidden;
     background-size: cover;
     opacity: 0.2;
+    box-shadow: 0 0 20px rgba(9, 105, 197, 0.45);
 
 }
 
@@ -61,7 +62,6 @@ h2 {
 
 main {
     color: #FFFFFF;
-    box-shadow: inset 0 0 10px #000000;
 }
 
 .collection {
@@ -73,9 +73,10 @@ main {
 }
 
 .collectionContainer {
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 0 10px #00000049;
     transition: 0.3s;
     max-width: 250px;
+    min-width: 250px;
     margin: 10px;
 }
 
@@ -90,14 +91,13 @@ main {
 }
 
 .collectionContainer:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 0 20px #0A71D333;
 }
 
 .collectionStats {
-    padding: 2px 16px;
+    padding: 2px 20px;
     min-height: 250px;
-    padding: 0 40px;
-    /*overflow-wrap: break-word;*/
+    text-align: center;
 }
 
 .collectionStats p:nth-child(4)::before {
@@ -105,6 +105,7 @@ main {
 }
 .collectionStats p:nth-child(4)::after {
     content: "/10";
+    color: #949494;
 }
 
 footer {

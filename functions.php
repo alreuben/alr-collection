@@ -25,6 +25,11 @@ function retrieveGamesDb(PDO $db): array
 
 function displayGames(array $games): string
 {
+if(!isset($game['image_url'])) {
+    echo 'No image set';
+}
+
+
     $result = '';
     foreach ($games as $game) {
         $result .= '<article class="collectionContainer">
