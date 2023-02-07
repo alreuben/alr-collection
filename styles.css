@@ -29,10 +29,14 @@ a {
     padding-left: 10px;
     font-weight: bold;
 }
+ button {
+     background-color: #0a71d3;
+     border-radius: 50px;
+ }
 
 
 header {
-    background-image: url("images/hero.png");
+    background-image: url("images/header.jpg");
     /*background-repeat: no-repeat;*/
     /*background-size: 100% 100%;*/
     display: flex;
@@ -41,18 +45,21 @@ header {
     flex-direction: column;
     text-align: center;
     width: 100%;
-    height: 50vh; /* if you don't want it to take up the full screen, reduce this number */
+    height: 25vh; /* if you don't want it to take up the full screen, reduce this number */
     overflow: hidden;
-    background-size: cover;
-    opacity: 0.2;
+    background-size: contain;
+    /*opacity: 0.2;*/
     box-shadow: 0 0 20px rgba(9, 105, 197, 0.45);
 
 }
 
 
-h1 a {
+h1, h1 a {
     font-size: 100px;
     color:#0A71D3;
+    padding: 20px 20px;
+    border: solid 2px #0A71D3;
+    border-radius: 50px;
 }
 
 h2 {
@@ -68,7 +75,7 @@ main {
     display: flex;
     flex-wrap: wrap;
     align-items: stretch;
-    padding: 100px 20px;
+    padding: 70px 20px;
     justify-content: center;
 }
 
@@ -101,7 +108,7 @@ main {
 }
 
 .collectionStats p:nth-child(4)::before {
-    content: "⭐  ";
+    content: "⭐ ";
 }
 .collectionStats p:nth-child(4)::after {
     content: "/10";
@@ -110,6 +117,5 @@ main {
 
 footer {
     display: flex;
-    padding: 10px 10%;
     flex-direction: column;
 }

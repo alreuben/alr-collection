@@ -3,9 +3,6 @@ require_once 'functions.php';
 $db = createDbConnection();
 $games = retrieveGamesDb($db);
 $gamesHtml = displayGames($games);
-//echo '<pre>';
-//var_dump($games);
-//echo '</pre>';
 ?>
 
 <!DOCTYPE html>
@@ -22,46 +19,22 @@ $gamesHtml = displayGames($games);
     <div>
         <h3><a href="#" class="navLogo">RBN</a></h3>
     </div>
-    <div class="navMiddle">
-        <h1><a href="#collection">Games Collection</a></h1>
-    </div>
     <div class="navRight">
-        <a href="#add">Add</a>
-        <a href="#delete">Delete</a>
+        <button>Add New Game</button>
+<!--        <a href="#delete">Delete</a>-->
     </div>
 </nav>
 
 
-
 <header>
-
+    <h1>Games Collection</h1>
 </header>
 
 
 <main>
     <section class="collection">
         <?php echo $gamesHtml; ?>
-<!--        <article class = "collectionContainer">-->
-<!--            <img src = "https://upload.wikimedia.org/wikipedia/en/thumb/1/15/The_Elder_Scrolls_V_Skyrim_cover.png/220px-The_Elder_Scrolls_V_Skyrim_cover.png">-->
-<!--            <div class = "collectionStats">-->
-<!--                <h2>name</h2>-->
-<!--                <p>year</p>-->
-<!--                <p>developer</p>-->
-<!--                <p>imdb_rating</p>-->
-<!--            </div>-->
-<!--        </article>-->
 
-
-<!---->
-<!--<article class="collectionContainer">-->
-<!--        <img src="" />-->
-<!--    <div class="collectionStats">-->
-<!--        <h2>--><?php //echo $games['name'] ?><!--</h2>-->
-<!--        <p>--><?php //echo $games["year"] ?><!--</p>-->
-<!--        <p>--><?php //echo $games["developers"] ?><!--</p>-->
-<!--        <p>--><?php //echo $games["imbd_rating"] ?><!--</p>-->
-<!--    </div>-->
-<!--</article>-->
 
 </section>
 </main>
