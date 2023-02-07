@@ -2,14 +2,21 @@
     box-sizing: border-box;
     background-color: #161C22;
     font-family: "Rubik", sans-serif;
+    color: #FFFFFF;
+}
+
+section {
+    display: flex;
+    padding: 10px 10%;
 }
 
 nav {
+    /*position: fixed;*/
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 10%;
-    /*position: fixed;*/
+
 }
 
 a {
@@ -17,8 +24,91 @@ a {
     text-decoration: none;
 }
 
+.navRight a {
+    font-size: 20px;
+    padding-left: 10px;
+    font-weight: bold;
+}
+
+
 header {
-    background-image: url("images/header.png");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
+    background-image: url("images/hero.png");
+    /*background-repeat: no-repeat;*/
+    /*background-size: 100% 100%;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    height: 50vh; /* if you don't want it to take up the full screen, reduce this number */
+    overflow: hidden;
+    background-size: cover;
+    opacity: 0.2;
+
+}
+
+
+h1 a {
+    font-size: 100px;
+    color:#0A71D3;
+}
+
+h2 {
+    color:#0A71D3;
+}
+
+
+main {
+    color: #FFFFFF;
+    box-shadow: inset 0 0 10px #000000;
+}
+
+.collection {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    padding: 100px 20px;
+    justify-content: center;
+}
+
+.collectionContainer {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    max-width: 250px;
+    margin: 10px;
+}
+
+.collectionContainer img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: contain;
+    width: 100%;
+    height: 310px;
+
+}
+
+.collectionContainer:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.collectionStats {
+    padding: 2px 16px;
+    min-height: 250px;
+    padding: 0 40px;
+    /*overflow-wrap: break-word;*/
+}
+
+.collectionStats p:nth-child(4)::before {
+    content: "⭐  ";
+}
+.collectionStats p:nth-child(4)::after {
+    content: "/10";
+}
+
+footer {
+    display: flex;
+    padding: 10px 10%;
+    flex-direction: column;
 }

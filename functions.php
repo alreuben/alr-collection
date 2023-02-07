@@ -18,7 +18,27 @@ function createDbConnection(): PDO
  */
 function retrieveGamesDb(PDO $db): array
 {
-    $stmt = $db->prepare('SELECT `name`, `year`, `developers`, `imdb_rating`, `image_url` FROM `games`');
+    $stmt = $db->prepare('SELECT `name`, `year`, `developer`, `imdb_rating`, `image_url` FROM `games`;');
     $stmt->execute();
     return $stmt->fetchAll();
 }
+
+function displayGames(array $games): string
+{
+    $result = '';
+    foreach ($games as $game) {
+        $result .= '<article class="collectionContainer">
+            <img src="' . $game['image_url'] . '">
+            <div class = "collectionStats">
+                <h2>' . $game['name'] . '</h2>
+                <p>' . $game['year'] . '</p>
+                <p>' . $game['developer'] . '</p>
+                <p>' . $game['imdb_rating'] . '</p>
+            </div>
+        </article>';
+    }
+    return $result;
+}
+
+
+
