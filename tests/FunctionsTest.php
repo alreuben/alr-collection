@@ -31,7 +31,7 @@ class FunctionsTest extends TestCase
 
       public function testFailureDisplayGames()
     {
-        $expected = 'no image set';
+        $expected = 'No image set';
         $input = [
           [
               'image_url' => '',
@@ -48,11 +48,11 @@ class FunctionsTest extends TestCase
 
 
 
-//    public function testMalformedDisplayGames()
-//    {
-//        $this->expectException(TypeError::class);
-//        $input = [2,3,4];
-//        $case = getPokemon($input);
-//    }
+    public function testMalformedDisplayGames()
+    {
+        $this->expectException(TypeError::class);
+        $input = 'this is a string';
+        $case = DisplayGames($input);
+    }
 
 }
