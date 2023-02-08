@@ -19,9 +19,7 @@ $gamesHtml = displayGames($games);
     <div>
         <h3><a href="#" class="navLogo">RBN</a></h3>
     </div>
-    <div class="navRight">
-        <button>Add New Game</button>
-    </div>
+
 </nav>
 
 <header>
