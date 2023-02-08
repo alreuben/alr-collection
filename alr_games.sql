@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.7.41)
 # Database: alr_games
-# Generation Time: 2023-02-06 13:50:05 +0000
+# Generation Time: 2023-02-07 16:46:10 +0000
 # ************************************************************
 
 
@@ -29,8 +29,8 @@ CREATE TABLE `games` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL DEFAULT '',
   `year` year(4) NOT NULL,
-  `developers` varchar(255) NOT NULL DEFAULT '',
-  `imdb_rating` float(1,1) unsigned NOT NULL,
+  `developer` varchar(255) NOT NULL DEFAULT '',
+  `imdb_rating` float(2,1) unsigned NOT NULL,
   `image_url` varchar(600) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -38,13 +38,14 @@ CREATE TABLE `games` (
 LOCK TABLES `games` WRITE;
 /*!40000 ALTER TABLE `games` DISABLE KEYS */;
 
-INSERT INTO `games` (`id`, `name`, `year`, `developers`, `imdb_rating`, `image_url`)
+INSERT INTO `games` (`id`, `name`, `year`, `developer`, `imdb_rating`, `image_url`)
 VALUES
 	(1,'The Elder Scrolls V: Skyrim','2011','Bethesda Game Studios',9.4,'https://upload.wikimedia.org/wikipedia/en/thumb/1/15/The_Elder_Scrolls_V_Skyrim_cover.png/220px-The_Elder_Scrolls_V_Skyrim_cover.png'),
 	(2,'Elden Ring','2022','FromSoftware',9.4,'https://upload.wikimedia.org/wikipedia/en/thumb/b/b9/Elden_Ring_Box_art.jpg/220px-Elden_Ring_Box_art.jpg'),
 	(3,'Final Fantasy VII Remake','2020','Square Enix',9.0,'https://upload.wikimedia.org/wikipedia/en/thumb/c/ce/FFVIIRemake.png/220px-FFVIIRemake.png'),
 	(4,'The Legend of Zelda: Ocarina of Time','1998','Nintendo',9.6,'https://upload.wikimedia.org/wikipedia/en/thumb/5/57/The_Legend_of_Zelda_Ocarina_of_Time.jpg/220px-The_Legend_of_Zelda_Ocarina_of_Time.jpg'),
-	(5,'Stardew Valley','2016','ConcernedApe',8.5,'https://upload.wikimedia.org/wikipedia/en/thumb/f/fd/Logo_of_Stardew_Valley.png/220px-Logo_of_Stardew_Valley.png');
+	(5,'Stardew Valley','2016','ConcernedApe',8.5,'https://store-images.s-microsoft.com/image/apps.44413.65985311967005000.4f51b5e9-febf-4990-8951-33ba59b634c9.924253ef-36b2-4cc0-8bb1-9a97c88d4828'),
+	(6,'Red Dead Redemption II','2018','Rockstar Games',9.7,'https://assets.vg247.com/current//2018/05/red_dead_redemption_2_cover_art_1.jpg');
 
 /*!40000 ALTER TABLE `games` ENABLE KEYS */;
 UNLOCK TABLES;
