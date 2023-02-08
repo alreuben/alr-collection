@@ -9,7 +9,7 @@ class FunctionsTest extends TestCase
     {
         $expected = '<article class="collectionContainer">
             <img src="skyrim.jpg">
-            <div class = "collectionStats">
+            <div class="collectionStats">
                 <h2>The Elder Scrolls V: Skyrim</h2>
                 <p>2011</p>
                 <p>Bethesda Game Studios</p>
@@ -31,22 +31,18 @@ class FunctionsTest extends TestCase
 
       public function testFailureDisplayGames()
     {
-        $expected = 'No image set';
+        $expected = '';
         $input = [
           [
-              'image_url' => '',
               'name' => 'Final Fantasy VII Remake',
               'year' => '2020',
               'developer' => 'Square Enix',
-              'imdb_rating' => '9'
+              'imdb_rating' => '9.0'
           ],
         ];
         $case = displayGames($input);
         $this->assertEquals($expected, $case);
     }
-
-
-
 
     public function testMalformedDisplayGames()
     {

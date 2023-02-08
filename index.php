@@ -9,7 +9,7 @@ $gamesHtml = displayGames($games);
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Ayannah's Games Collection</title>
+    <title>Games Collection</title>
     <link rel="stylesheet" href="normalize.css" type="text/css"/>
     <link rel="stylesheet" href="styles.css" type="text/css"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik">
@@ -21,7 +21,6 @@ $gamesHtml = displayGames($games);
     </div>
     <div class="navRight">
         <button>Add New Game</button>
-<!--        <a href="#delete">Delete</a>-->
     </div>
 </nav>
 
@@ -34,8 +33,6 @@ $gamesHtml = displayGames($games);
 <main>
     <section class="collection">
         <?php echo $gamesHtml; ?>
-
-
 </section>
 </main>
 
