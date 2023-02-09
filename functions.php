@@ -62,18 +62,18 @@ function displayGames(array $games): string
  * @param string $developer
  * @param string $imdb_rating
  * @param string $image_url
- * @return string true if all form inputs are valid, false if not
+ * @return bool  true if all form inputs are valid, false if not
  */
-function validateFormInput(string $name, string $year, string $developer, string $imdb_rating, string $image_url): string
+function validateFormInput(string $name, string $year, string $developer, string $imdb_rating, string $image_url): bool
 {
     $validName = filter_var($name, FILTER_SANITIZE_STRING);
-    $validName = preg_match('/^[a-zA-Z0-9: ]{1,255}$/', $name);
+    $validName = preg_match('/^[A-Za-z0-9:]+( [A-Za-z0-9:]+){1,255}$/', $name);
 
     $validYear = filter_var($year, FILTER_SANITIZE_NUMBER_INT);
     $validYear = filter_var($year, FILTER_VALIDATE_INT, ["options" => ["min_range" => 1000, "max_range" => 2023]]);
 
     $validDeveloper = filter_var($developer, FILTER_SANITIZE_STRING);
-    $validDeveloper = preg_match('/^[a-zA-Z ]{1,255}$/', $developer);
+    $validDeveloper = preg_match('/^[A-Za-z]+( [A-Za-z]+){1,255}$/', $developer);
 
     $validImdb_rating = filter_var($imdb_rating, FILTER_SANITIZE_NUMBER_FLOAT);
     $validImdb_rating = filter_var($imdb_rating, FILTER_VALIDATE_FLOAT, ["options" => ["min_range" => 1.0, "max_range" => 10.0]]);
