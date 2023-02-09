@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Creates a Db connection
  *
@@ -22,7 +23,6 @@ function retrieveGamesDb(PDO $db): array
     $stmt->execute();
     return $stmt->fetchAll();
 }
-
 
 /**
  * Displays each game from the games array into an individual HTML block
@@ -62,12 +62,12 @@ function displayGames(array $games): string
  * @param string $developer
  * @param string $imdb_rating
  * @param string $image_url
- * @return string 'Valid' if all the inputs are valid and 'Invalid' if more than one field is invalid
+ * @return string true if all form inputs are valid, false if not
  */
 function validateFormInput(string $name, string $year, string $developer, string $imdb_rating, string $image_url): string
 {
     $validName = filter_var($name, FILTER_SANITIZE_STRING);
-    $validName = preg_match('/^[a-zA-Z0-9 ]{1,255}$/', $name);
+    $validName = preg_match('/^[a-zA-Z0-9: ]{1,255}$/', $name);
 
     $validYear = filter_var($year, FILTER_SANITIZE_NUMBER_INT);
     $validYear = filter_var($year, FILTER_VALIDATE_INT, ["options" => ["min_range" => 1000, "max_range" => 2023]]);
@@ -82,37 +82,30 @@ function validateFormInput(string $name, string $year, string $developer, string
     $validImage_url = filter_var($image_url, FILTER_VALIDATE_URL);
 
     if ($validName && $validYear && $validDeveloper && $validImdb_rating && $validImage_url) {
-        return 'Valid';
-    } elseif($validName && $validYear && $validDeveloper && $validImdb_rating &&! $validImage_url) {
-        return 'Invalid URL';
-    } elseif($validName && $validYear && $validDeveloper && $validImage_url &&! $validImdb_rating) {
-        return 'Invalid rating'; // turn to float??
-    } elseif($validName && $validYear && $validImdb_rating && $validImage_url &&! $validDeveloper) {
-        return 'Invalid Developer name. A-Z only';
-    } elseif($validName && $validDeveloper && $validImdb_rating && $validImage_url &&! $validYear) {
-        return 'Invalid year';
-    } elseif($validYear && $validDeveloper && $validImdb_rating && $validImage_url &&! $validName) {
-        return 'Invalid Game name. Please remove special characters';
-    } else {
-        return 'Invalid';
+        return true;
     }
+    return false;
 }
 
 /**
  * adds a new game to the  games Db
  *
- * @return PDO the db connection
+ * @param PDO $db
+ * @param string $newGameName
+ * @param string $newGameYear
+ * @param string $newGameDeveloper
+ * @param string $newGameImdb_rating
+ * @param string $newGameImage_url
+ * @return bool
  */
-//function addGameToDb(PDO $db): array
-//{
-//    $stmt = $db->prepare("SELECT `name`, `year`, `developer`, `imdb_rating`, `image_url` FROM `games`;");
-//  bind params
-//    $stmt->execute();
-//    return $stmt->fetchAll();
-//}
-
-//function addNewGame(PDO $db, string $addGame): string
-//{
-//    $addGame = $_POST['name'] .= $_POST['year'] .= $_POST['developer'].= $_POST['imdb_rating'].= $_POST['image_url'];
-//    return $addGame;
-//}
+function addGameToDb(PDO $db, string $newGameName, string $newGameYear, string $newGameDeveloper, string $newGameImdb_rating, string $newGameImage_url): bool
+{
+    $stmnt = $db->prepare("INSERT INTO `games` (`name`, `year`, `developer`, `imdb_rating`, `image_url`) VALUES 
+    (:newGameName, :newGameYear, :newGameDeveloper, :newImdb_rating, :newImage_url);");
+    $stmnt->bindParam(':newGameName', $newGameName);
+    $stmnt->bindParam(':newGameYear', $newGameYear);
+    $stmnt->bindParam(':newGameDeveloper', $newGameDeveloper);
+    $stmnt->bindParam(':newImdb_rating', $newGameImdb_rating);
+    $stmnt->bindParam(':newImage_url', $newGameImage_url);
+    return $stmnt->execute();
+}

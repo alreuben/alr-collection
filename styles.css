@@ -124,13 +124,16 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-
 }
 
 form input {
     display: block;
+    margin-bottom: 20px;
 }
 
-form div label {
-    padding-top: 10px;
+form div input {
+    margin-bottom: 20px;
+    height:25px;
+    width: 300px;
+    font-size:14pt;
 }

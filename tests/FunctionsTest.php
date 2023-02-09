@@ -1,8 +1,8 @@
 <?php
+
 require_once '../functions.php';
 
 use PHPUnit\Framework\TestCase;
-
 class FunctionsTest extends TestCase
 {
     public function testSuccessDisplayGames()
@@ -28,7 +28,6 @@ class FunctionsTest extends TestCase
         $case = displayGames($input);
         $this->assertEquals($expected, $case);
     }
-
     public function testFailureDisplayGames()
     {
         $expected = '';
@@ -43,29 +42,24 @@ class FunctionsTest extends TestCase
         $case = displayGames($input);
         $this->assertEquals($expected, $case);
     }
-
     public function testMalformedDisplayGames()
     {
         $this->expectException(TypeError::class);
         $input = 'this is a string';
         $case = DisplayGames($input);
     }
-
-
     public function testSuccessValidateFormInput()
     {
-        $expected = 'Valid';
+        $expected = true;
         $case = validateFormInput('Last of Us', '2013', 'Naughty Dog', '9.7', 'https://upload.wikimedia.org/wikipedia/en/thumb/4/46/Video_Game_Cover_-_The_Last_of_Us.jpg/220px-Video_Game_Cover_-_The_Last_of_Us.jpg');
         $this->assertEquals($expected, $case);
     }
-
     public function testFailureValidateFormInput()
     {
-        $expected = 'Invalid URL';
+        $expected = false;
         $case = validateFormInput('Last of Us', '2013', 'Naughty Dog', '9.7', 'google');
         $this->assertEquals($expected, $case);
     }
-
     public function testMalformedValidateFormInput()
     {
         $this->expectException(TypeError::class);

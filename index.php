@@ -1,8 +1,11 @@
 <?php
+
 require_once 'functions.php';
+
 $db = createDbConnection();
 $games = retrieveGamesDb($db);
 $gamesHtml = displayGames($games);
+
 ?>
 
 <!DOCTYPE html>
@@ -23,16 +26,13 @@ $gamesHtml = displayGames($games);
         <button><a href="insertGame.php">Add New Game</a></button>
     </div>
 </nav>
-
 <header>
     <h1>Games Collection</h1>
 </header>
-
-
 <main>
     <section class="collection">
         <?php echo $gamesHtml; ?>
-</section>
+    </section>
 </main>
 
 <footer>
@@ -40,8 +40,5 @@ $gamesHtml = displayGames($games);
         <p>© Copyright Ayannah Reuben 2023</p>
     </section>
 </footer>
-
-
-
 </body>
 </html>
