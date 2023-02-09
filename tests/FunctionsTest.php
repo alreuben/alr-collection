@@ -51,4 +51,25 @@ class FunctionsTest extends TestCase
         $case = DisplayGames($input);
     }
 
+
+
+    public function testValidateFormInput()
+    {
+        $expected = 'valid';
+        $input = [
+            [
+                'image_url' => 'https://upload.wikimedia.org/wikipedia/en/thumb/4/46/Video_Game_Cover_-_The_Last_of_Us.jpg/220px-Video_Game_Cover_-_The_Last_of_Us.jpg',
+                'name' => 'The Last of Us',
+                'year' => '2013',
+                'developer' => 'Naughty Dog',
+                'imdb_rating' => '9.7'
+            ],
+        ];
+        $case = displayGames($input);
+        $this->assertEquals($expected, $case);
+    }
+
+
 }
+
+

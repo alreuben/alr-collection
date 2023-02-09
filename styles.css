@@ -23,11 +23,16 @@ a {
     text-decoration: none;
 }
 
-.navRight a {
-    font-size: 20px;
-    padding-left: 10px;
-    font-weight: bold;
+button, #submitButton {
+    background-color: #0a71d3;
+    border-radius: 50px;
 }
+
+/*.navRight a {*/
+/*    font-size: 20px;*/
+/*    padding-left: 10px;*/
+/*    font-weight: bold;*/
+/*}*/
 
 
 header {
@@ -108,4 +113,9 @@ main {
 footer {
     display: flex;
     flex-direction: column;
+}
+
+
+form input {
+    display: block;
 }
