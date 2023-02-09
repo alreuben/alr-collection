@@ -82,7 +82,7 @@ function validateFormInput(string $name, string $year, string $developer, string
     $validImage_url = filter_var($image_url, FILTER_VALIDATE_URL);
 
     if ($validName && $validYear && $validDeveloper && $validImdb_rating && $validImage_url) {
-        return 'valid';
+        return 'Valid';
     } elseif($validName && $validYear && $validDeveloper && $validImdb_rating &&! $validImage_url) {
         return 'Invalid URL';
     } elseif($validName && $validYear && $validDeveloper && $validImage_url &&! $validImdb_rating) {

@@ -18,36 +18,32 @@ $games = retrieveGamesDb($db);
     <h1>Add New Game</h1>
 </header>
 
-<section>
+<section class="formSection">
     <div>
         <form action="formLogic.php" method="post">
             <div>
                 <label for="name">Name of Game: </label>
-                <input type="text" name="name">
+                <input type="text" id="name" name="name">
             </div>
             <div>
                 <label for="year">Year Released: </label>
-                <input type="text" name="year">
+                <input type="text" id="year" name="year">
             </div>
             <div>
                 <label for="developer">Game Developer: </label>
-                <input type="text" name="developer">
+                <input type="text" id="developer" name="developer">
             </div>
             <div>
                 <label for="imbd_rating">IMBD Rating: </label>
-                <input type="text" name="imdb_rating">
+                <input type="text" id="imbd_rating" name="imdb_rating">
             </div>
             <div>
                 <label for="image_url">Image URL: </label>
-                <input type="text" name="image_url">
+                <input type="text" id="image_url" name="image_url">
             </div>
             <input type="submit" id="submitButton" value="Add New Game">
         </form>
     </div>
 </section>
-
 </body>
 </html>
-
-
-

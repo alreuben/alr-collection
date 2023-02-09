@@ -28,6 +28,11 @@ button, #submitButton {
     border-radius: 50px;
 }
 
+
+#submitButton {
+   margin-top: 20px;
+}
+
 /*.navRight a {*/
 /*    font-size: 20px;*/
 /*    padding-left: 10px;*/
@@ -61,7 +66,6 @@ h1, h1 a {
 h2 {
     color:#0A71D3;
 }
-
 
 main {
     color: #FFFFFF;
@@ -115,7 +119,18 @@ footer {
     flex-direction: column;
 }
 
+.formSection {
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
 
 form input {
     display: block;
+}
+
+form div label {
+    padding-top: 10px;
 }
