@@ -1,9 +1,3 @@
-<?php
-require_once 'functions.php';
-$db = createDbConnection();
-$games = retrieveGamesDb($db);
-//$newGame = addNewGame($db, $addGame)
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +11,6 @@ $games = retrieveGamesDb($db);
 <header>
     <h1>Add New Game</h1>
 </header>
-
 <section class="formSection">
     <div>
         <form action="formLogic.php" method="post">
@@ -41,9 +34,10 @@ $games = retrieveGamesDb($db);
                 <label for="image_url">Image URL: </label>
                 <input type="text" id="image_url" name="image_url">
             </div>
-            <input type="submit" id="submitButton" value="Add New Game">
+            <input type="submit" id="submitButton" name="submitButton" value="Add New Game">
         </form>
     </div>
 </section>
 </body>
 </html>
+
